@@ -1,7 +1,7 @@
 <%- include('partials/header.ejs') %>
 
 <div class="container">
-    <h1 class="title-lg mb-2">Create New Post</h1>
+    <h1 class="title-lg mb-2">Edit Post</h1>
     <a href="/post/<%= post.ID %>" class="btn btn-none btn-icon"><img class="btn-icon-img" src="/images/arrow.svg" height="15px">Go back</a>
 
         <form class="edit-post-container" action="/edit/<%= post.ID %>" method="POST">
