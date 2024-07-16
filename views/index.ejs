@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container">
+    <h1 class="title-lg mb-2">Recent Posts</h1>
+    <div class="blog-posts">
+        <% if (locals.blogPosts.length > 0) { %>
+            <% blogPosts.slice().reverse().forEach((post) => { %>
+                <%- include('partials/postPreview', {post: post}); %>
+            <% }); %>
+        <% } else { %>
+            <p>Nothing to show :(</p>
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

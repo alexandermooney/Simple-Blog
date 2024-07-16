@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+
+
+
+<div class="container">
+    <div class="post-container">
+        <div class="post-image">
+            <img src="<%= post.imageURL %>" alt="" srcset="" height="300">
+        </div>
+        <div class="post-content">
+            <h2 class="post-title title-md"><%= post.title %></h2>
+            <p class="author">By <%= post.author %></p>
+            <p class="date text-sm"><%= post.date %></p>
+            <p class="postBody"><%= post.body %></p>
+        </div>
+    </div>
+    <div class="button-group">
+        <form action="/edit/<%= post.ID %>" method="get">
+            <button class="btn btn-solid bg-secondary" type="submit">Edit Post</button>
+        </form>
+        <form action="/post/delete/<%= post.ID %>?_method=DELETE" method="post">
+            <button class="btn btn-solid bg-danger" type="submit">Delete Post</button>
+        </form>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

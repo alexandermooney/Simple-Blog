@@ -1,0 +1,12 @@
+<div class="post-container">
+    <div class="post-image">
+        <img src="<%= post.imageURL %>" alt="" srcset="" height="300">
+    </div>
+    <div class="post-content">
+        <h2 class="post-title title-md"><%= post.title %></h2>
+        <p class="author">By <%= post.author %></p>
+        <p class="date text-sm"><%= post.date %></p>
+        <p class="postBody"><%= post.body.slice(0, 350) %> ...</p>
+        <a href="/post/<%= post.ID %>" class="btn btn-solid bg-primary">Read Full Post</a>
+    </div>
+</div>

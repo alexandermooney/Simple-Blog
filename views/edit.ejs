@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container">
+    <h1 class="title-lg mb-2">Create New Post</h1>
+    <a href="/post/<%= post.ID %>" class="btn btn-none btn-icon"><img class="btn-icon-img" src="/images/arrow.svg" height="15px">Go back</a>
+
+        <form class="edit-post-container" action="/edit/<%= post.ID %>" method="POST">
+            <label for="postTitle">Title:</label>
+            <input type="text" name="title" id="postTitle" value="<%= post.title %>" autofocus required>
+            <label for="postAuthor">Author:</label>
+            <input type="text" name="author" id="postAuthor" value="<%= post.author %>" required>
+            <label for="postImage">Featured Image URL:</label>
+            <div class="show-img">
+                <input type="text" name="imageURL" id="postImage" value="<%= post.imageURL %>" required>
+                <div class="img-error-text"></div>
+                <img class="img-placeholder hidden" src="/images/placeholder.png" alt="" srcset="">
+                <img class="img-loaded" src="<%= post.imageURL %>" onerror="showErrorMessage()" onload="showImage()">
+            </div>
+            <label for="postBody">Content:</label>
+            <textarea name="body" id="postBody" required><%= post.body %></textarea>
+            <input class="btn btn-solid btn-lg bg-primary" type="submit" value="submit">
+        </form>
+
+        <script src="/js/new.js"></script>
+</div>
+
+<%- include('partials/footer.ejs') %>

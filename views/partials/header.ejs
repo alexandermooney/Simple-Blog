@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <header class="page-header flex-row flex-align-center">
+        <div class="container">
+            <div class="flex-row justify-between flex-align-center">
+                <a href='/'><span class="logo">Blog</span></a>
+                <form action="/new" method="GET">
+                    <button class="btn btn-solid bg-primary">New Post +</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
